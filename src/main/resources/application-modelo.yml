@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cliente-endereco-solid-v2
+    password:
+    username:
+    driverClassName: org.postgresql.Driver
