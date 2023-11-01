@@ -33,5 +33,15 @@ jobs:
         with:
           report_path: 'target/surefire-reports/TEST-*.xml'
 
-
+  deploy:
+    needs: ["compilacao-e-testes"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
           
