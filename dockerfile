@@ -13,5 +13,5 @@ EXPOSE 8080
 
 COPY --from=build /target/cliente-endereco-solid2-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT [ "java", "-jar", "app.jar"]
+ENTRYPOINT [ "java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
 

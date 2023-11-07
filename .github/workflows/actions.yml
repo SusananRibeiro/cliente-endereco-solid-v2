@@ -21,6 +21,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - user: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '15'
+          postgresql db: senac-jpa-solid
+          postgresql user: postgres
+          postgresql password: postgres
       - name: Compilação
         run: mvn -B package --file pom.xml  -DskipTests
 

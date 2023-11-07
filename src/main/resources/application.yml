@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   jpa:
     database: POSTGRESQL
@@ -5,9 +7,8 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://${DB_HOST}:5432/produtos_fuqy
-    password: ${DB_PASS}
-    username: ${DB_USER}
+    url: jdbc:postgresql://localhost:5432/senac-jpa-solid
+    password: postgres
+    username: postgres
     driverClassName: org.postgresql.Driver
-
 
